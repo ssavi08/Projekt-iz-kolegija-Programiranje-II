@@ -171,7 +171,7 @@ void* kriterijPretrazivanja(BILJKA* const poljeBiljaka, const char* const imeDat
             break;
         case 2:
             printf("Unesite ime biljke: ");
-            scanf("%19[^\n]", trazeniChar);
+            scanf("%23[^\n]", trazeniChar);
             getchar();
             for (i = 0; i < brojBiljaka; i++) {
                 if (!strcmp(trazeniChar, (poljeBiljaka + i)->imeBiljke)) {
@@ -207,7 +207,7 @@ void* kriterijPretrazivanja(BILJKA* const poljeBiljaka, const char* const imeDat
             break;
         case 4:
             printf("Unesite grupu biljke: ");
-            scanf("%19[^\n]", trazeniChar);
+            scanf("%23[^\n]", trazeniChar);
             getchar();
             for (i = 0; i < brojBiljaka; i++) {
                 if (!strcmp(trazeniChar, (poljeBiljaka + i)->grupa)) {
@@ -243,7 +243,7 @@ void* kriterijPretrazivanja(BILJKA* const poljeBiljaka, const char* const imeDat
         break;
         case 6:
             printf("Unesite datum dostupnosti (u formatu: ""dan.mjesec."" ) biljke: ");
-            scanf("%19[^\n]", trazeniChar);
+            scanf("%23[^\n]", trazeniChar);
             getchar();
             for (i = 0; i < brojBiljaka; i++) {
                 if (!strcmp(trazeniChar, (poljeBiljaka + i)->datumDostupnosti)) {
