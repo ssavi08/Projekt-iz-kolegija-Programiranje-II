@@ -479,8 +479,8 @@ int izlazIzPrograma(BILJKA* poljeBiljaka, const char* const imeDatoteke) {
     
     while(1){
         
-        scanf("%2s", vrata);
-        fflush(stdin);
+        scanf("%2[^\n]", vrata);
+        getchar();
         if(strcmp(vrata, "da") == 0 || strcmp(vrata, "ne") == 0 || strcmp(vrata, "ob") == 0){
             break;
         }
