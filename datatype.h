@@ -4,10 +4,10 @@
 typedef struct biljka {
 	int idBiljke;
 	char imeBiljke[20];
-	char datumDostupnosti[20];
+	char datumDostupnosti[7];
 	int cijena;
-	char sezona[24];
-	char grupa[20];
+	char sezona[14];
+	char grupa[10];
 
 }BILJKA;
 
