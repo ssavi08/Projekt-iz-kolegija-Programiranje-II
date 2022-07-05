@@ -6,7 +6,7 @@
 int main() {
 	
 	int uvijet = 1;
-	char imeDatoteke[20] = "biljke.bin";
+	char imeDatoteke[11] = "biljke.bin";
     
     FILE* pF = NULL;
 	pF = fopen(imeDatoteke, "rb");
