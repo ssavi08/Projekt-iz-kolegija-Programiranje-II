@@ -301,27 +301,24 @@ void brisanjeBiljaka(BILJKA** const trazenaBiljka, BILJKA* const poljeBiljaka, c
 
 void azuriranje(const char* const imeDatoteke, BILJKA* const poljeBiljaka) {
     
+    FILE* pF = fopen(imeDatoteke, "rb+");
+    if (pF == NULL){
+		printf("Greska tijekom otvaranja datoteke.\n");
+        return;
+    }
+    
     if (poljeBiljaka == NULL || brojBiljaka == 0) {
 		printf("Polje biljaka je prazno!\n");
 		return;
 	}
-    
+        
     int ispravak;
     
-    FILE* pF = fopen(imeDatoteke, "rb+");
-    if (pF == NULL){
-		printf("Greska! Nema unesenih biljaka.\n");
-        return;
-    }
-    
-    printf("Unesite broj biljke koju zelite azurirati!\n");
-    scanf("%d", &ispravak);
-    getchar();
-    
-    if(ispravak > brojBiljaka || ispravak < brojBiljaka){
-        printf("Greska.\n");
-        return;
-    }
+    do{
+        printf("Unesite broj biljke koju zelite azurirati!\n");
+        scanf("%d", &ispravak);
+        getchar();
+    }while(ispravak > brojBiljaka || ispravak < 1);
     
     fseek(pF, sizeof(int) + (sizeof(BILJKA) * (ispravak - 1)), SEEK_SET);
     
