@@ -20,20 +20,20 @@ int dodajBiljku(const char* const imeDatoteke) {
     
 	BILJKA temp = { 0 };
 	temp.idBiljke = brojBiljaka;
-
+    
 	printf("Unesite ime biljke!\n");
-    scanf("%99[^\n]", temp.imeBiljke);
+    scanf("%19[^\n]", temp.imeBiljke);
     getchar();
     
 	printf("Unesite datum dostupnosti biljke! format: dan.mjesec.\n");
-	scanf("%19[^\n]", temp.datumDostupnosti);
+	scanf("%6[^\n]", temp.datumDostupnosti);
     getchar();
-
+    
 	printf("Unesite cjelobrojnu cijenu biljke u kunama!\n");
     float c1;
     do{                         //Provjera da li je cijena cijeli broj
         scanf("%f", &c1);
-        fflush(stdin);
+        getchar();
         temp.cijena = (int)c1;
         if(temp.cijena == 0 ){
             printf("Greska tijekom unosa cijene.");
@@ -43,18 +43,19 @@ int dodajBiljku(const char* const imeDatoteke) {
         
         if(c1 - temp.cijena != 0 || temp.cijena == 0 ){
             printf("Molimo zaokruzite cijenu na cijeli broj: ");
-            fflush(stdin);
+            
         }
     }while(c1 - temp.cijena != 0);
 
+    
 	printf("Unesite sezonu biljke: (jednosezonsko / trajnica)!\n");
-	scanf("%19s", temp.sezona);
+	scanf("%13[^\n]", temp.sezona);
     getchar();
     
 	printf("Unesite grupu biljke: (grmolik / viseci / puzavac)!\n");
-	scanf("%19s", temp.grupa);
+	scanf("%9[^\n]", temp.grupa);
     getchar();
-	   
+    
 	fseek(pF, sizeof(BILJKA) * brojBiljaka, SEEK_CUR);
 	fwrite(&temp, sizeof(BILJKA), 1, pF);
 	rewind(pF);
