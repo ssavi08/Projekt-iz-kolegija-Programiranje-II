@@ -1,5 +1,4 @@
-# ferit
-studiranje
+# Zavrsni Projekt
 
 Projekt kao završni rad iz kolegija Programiranje 2.
 
